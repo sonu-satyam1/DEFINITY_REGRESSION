@@ -1,0 +1,2595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.1 (Python 3.13.3 on win32)" generated="2025-09-05T16:22:28.659611" rpa="false" schemaversion="5">
+<suite id="s1" name="Bulk Edit Tests" source="C:\Users\costrategix\PycharmProjects\DEFINITY_REGRESSION\Tests\bulk_edit_tests.robot">
+<test id="s1-t1" name="Verify if user is able to select all jobs" line="14">
+<kw name="open browser with url and login" owner="resource" type="SETUP">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:29.311749" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>${BROWSER}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-09-05T16:22:29.311541" elapsed="2.728164"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:32.040512" level="INFO">Opening url 'https://costrategi-security-qa2.internal-definitywfs.com/signin'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-09-05T16:22:32.040135" elapsed="3.392132"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-09-05T16:22:35.432682" elapsed="0.061356"/>
+</kw>
+<kw name="Wait Until Page Ready" owner="resource">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-05T16:22:35.494806" elapsed="0.036133"/>
+</kw>
+<kw name="Wait Until Any Loaders Disappear" owner="resource">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:35.532240" elapsed="0.016912"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:35.531933" elapsed="0.017424"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:35.550001" elapsed="0.012214"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:35.549672" elapsed="0.012678"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:35.562771" elapsed="0.012089"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:35.562550" elapsed="0.012467"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:35.575524" elapsed="0.021054"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:35.575255" elapsed="0.021432"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:22:35.531479" elapsed="0.065329"/>
+</kw>
+<kw name="Wait Until Network Is Idle" owner="resource">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:35.598044" level="INFO">Executing JavaScript:
+return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);
+Without any arguments.</msg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:22:35.597511" elapsed="0.010395"/>
+</kw>
+<arg>10x</arg>
+<arg>1s</arg>
+<arg>Execute JavaScript</arg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-09-05T16:22:35.597273" elapsed="0.010750"/>
+</kw>
+<doc>Waits until there are no active network requests (XHR/fetch)</doc>
+<status status="PASS" start="2025-09-05T16:22:35.596989" elapsed="0.011137"/>
+</kw>
+<kw name="Wait Until DOM Is Stable" owner="resource">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:35.609151" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:22:35.618752" level="INFO">${initial} = 67</msg>
+<var>${initial}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:22:35.608731" elapsed="0.010103"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-05T16:22:36.120100" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-05T16:22:35.619259" elapsed="0.501048"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:36.121365" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:22:36.128486" level="INFO">${after} = 67</msg>
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:22:36.120675" elapsed="0.007905"/>
+</kw>
+<while condition="${initial} != ${after}">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${initial}</var>
+<arg>${after}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-09-05T16:22:36.129513" elapsed="0.000074"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-09-05T16:22:36.130165" elapsed="0.000117"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-09-05T16:22:36.130686" elapsed="0.000078"/>
+</kw>
+<status status="NOT RUN" start="2025-09-05T16:22:36.128781" elapsed="0.002083"/>
+</iter>
+<status status="NOT RUN" start="2025-09-05T16:22:36.128778" elapsed="0.002182"/>
+</while>
+<status status="PASS" start="2025-09-05T16:22:35.608396" elapsed="0.523629"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:22:35.494370" elapsed="0.637836"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:36.133900" level="INFO">Typing text 'sonu.satyam@costrategix.com' into text field 'xpath://input[@name='emailAddress']'.</msg>
+<arg>xpath://input[@name='emailAddress']</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T16:22:36.132925" elapsed="0.244440"/>
+</kw>
+<kw name="Wait Until Page Ready" owner="resource">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-05T16:22:36.378246" elapsed="0.011227"/>
+</kw>
+<kw name="Wait Until Any Loaders Disappear" owner="resource">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:36.390571" elapsed="0.008523"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:36.390302" elapsed="0.009022"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:36.400313" elapsed="0.009028"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:36.399735" elapsed="0.009791"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:36.410150" elapsed="0.009020"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:36.409825" elapsed="0.009511"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:36.420083" elapsed="0.009083"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:36.419696" elapsed="0.009650"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:22:36.389851" elapsed="0.039644"/>
+</kw>
+<kw name="Wait Until Network Is Idle" owner="resource">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:36.431637" level="INFO">Executing JavaScript:
+return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);
+Without any arguments.</msg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:22:36.430824" elapsed="0.006831"/>
+</kw>
+<arg>10x</arg>
+<arg>1s</arg>
+<arg>Execute JavaScript</arg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-09-05T16:22:36.430389" elapsed="0.007432"/>
+</kw>
+<doc>Waits until there are no active network requests (XHR/fetch)</doc>
+<status status="PASS" start="2025-09-05T16:22:36.429873" elapsed="0.008083"/>
+</kw>
+<kw name="Wait Until DOM Is Stable" owner="resource">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:36.439356" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:22:36.444600" level="INFO">${initial} = 67</msg>
+<var>${initial}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:22:36.438805" elapsed="0.005871"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-05T16:22:36.945612" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-05T16:22:36.444949" elapsed="0.500758"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:36.946610" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:22:36.954669" level="INFO">${after} = 67</msg>
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:22:36.945879" elapsed="0.008920"/>
+</kw>
+<while condition="${initial} != ${after}">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${initial}</var>
+<arg>${after}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-09-05T16:22:36.956052" elapsed="0.000100"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-09-05T16:22:36.956500" elapsed="0.000084"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-09-05T16:22:36.956928" elapsed="0.000091"/>
+</kw>
+<status status="NOT RUN" start="2025-09-05T16:22:36.955054" elapsed="0.002123"/>
+</iter>
+<status status="NOT RUN" start="2025-09-05T16:22:36.955049" elapsed="0.002253"/>
+</while>
+<status status="PASS" start="2025-09-05T16:22:36.438305" elapsed="0.519254"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:22:36.377762" elapsed="0.579971"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:36.958628" level="INFO">Typing password into text field 'xpath://input[@name='password']'.</msg>
+<msg time="2025-09-05T16:22:37.009464" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>xpath://input[@name='password']</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T16:22:36.958043" elapsed="0.127831"/>
+</kw>
+<kw name="Wait Until Page Ready" owner="resource">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.086721" elapsed="0.007018"/>
+</kw>
+<kw name="Wait Until Any Loaders Disappear" owner="resource">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.094546" elapsed="0.010630"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.094346" elapsed="0.010931"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.105702" elapsed="0.007362"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.105436" elapsed="0.007766"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.113715" elapsed="0.008990"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.113440" elapsed="0.009392"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.123319" elapsed="0.008235"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.123075" elapsed="0.009031"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:22:37.093992" elapsed="0.038283"/>
+</kw>
+<kw name="Wait Until Network Is Idle" owner="resource">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:37.134659" level="INFO">Executing JavaScript:
+return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);
+Without any arguments.</msg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.133767" elapsed="0.006413"/>
+</kw>
+<arg>10x</arg>
+<arg>1s</arg>
+<arg>Execute JavaScript</arg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.133090" elapsed="0.007227"/>
+</kw>
+<doc>Waits until there are no active network requests (XHR/fetch)</doc>
+<status status="PASS" start="2025-09-05T16:22:37.132539" elapsed="0.007899"/>
+</kw>
+<kw name="Wait Until DOM Is Stable" owner="resource">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:37.141608" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:22:37.146307" level="INFO">${initial} = 67</msg>
+<var>${initial}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.141113" elapsed="0.005234"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-05T16:22:37.647481" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.146517" elapsed="0.501206"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:37.648606" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:22:37.655713" level="INFO">${after} = 67</msg>
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.648029" elapsed="0.007750"/>
+</kw>
+<while condition="${initial} != ${after}">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${initial}</var>
+<arg>${after}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-09-05T16:22:37.656305" elapsed="0.000038"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-09-05T16:22:37.656458" elapsed="0.000027"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-09-05T16:22:37.656603" elapsed="0.000028"/>
+</kw>
+<status status="NOT RUN" start="2025-09-05T16:22:37.655884" elapsed="0.000792"/>
+</iter>
+<status status="NOT RUN" start="2025-09-05T16:22:37.655883" elapsed="0.000827"/>
+</while>
+<status status="PASS" start="2025-09-05T16:22:37.140736" elapsed="0.516046"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:22:37.086335" elapsed="0.570517"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:37.657142" level="INFO">Clicking button 'xpath://button[@type='submit']'.</msg>
+<arg>xpath://button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.656954" elapsed="0.130577"/>
+</kw>
+<kw name="Wait Until Page Ready" owner="resource">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.788236" elapsed="0.009530"/>
+</kw>
+<kw name="Wait Until Any Loaders Disappear" owner="resource">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.798582" elapsed="0.009313"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.798405" elapsed="0.009602"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.808408" elapsed="0.009483"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.808238" elapsed="0.009835"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.818634" elapsed="0.008706"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.818360" elapsed="0.009139"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.828020" elapsed="0.025949"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.827744" elapsed="0.026378"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:22:37.798082" elapsed="0.056136"/>
+</kw>
+<kw name="Wait Until Network Is Idle" owner="resource">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:37.855921" level="INFO">Executing JavaScript:
+return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);
+Without any arguments.</msg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.855473" elapsed="0.008129"/>
+</kw>
+<arg>10x</arg>
+<arg>1s</arg>
+<arg>Execute JavaScript</arg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.855016" elapsed="0.008799"/>
+</kw>
+<doc>Waits until there are no active network requests (XHR/fetch)</doc>
+<status status="PASS" start="2025-09-05T16:22:37.854552" elapsed="0.009468"/>
+</kw>
+<kw name="Wait Until DOM Is Stable" owner="resource">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:37.865792" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:22:37.872017" level="INFO">${initial} = 65</msg>
+<var>${initial}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.865109" elapsed="0.006968"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-05T16:22:38.372939" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-05T16:22:37.872289" elapsed="0.500739"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:38.373430" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:22:38.381262" level="INFO">${after} = 65</msg>
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:22:38.373166" elapsed="0.008142"/>
+</kw>
+<while condition="${initial} != ${after}">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${initial}</var>
+<arg>${after}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-09-05T16:22:38.381651" elapsed="0.000022"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-09-05T16:22:38.381763" elapsed="0.000025"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-09-05T16:22:38.381885" elapsed="0.000024"/>
+</kw>
+<status status="NOT RUN" start="2025-09-05T16:22:38.381396" elapsed="0.000552"/>
+</iter>
+<status status="NOT RUN" start="2025-09-05T16:22:38.381395" elapsed="0.000584"/>
+</while>
+<status status="PASS" start="2025-09-05T16:22:37.864405" elapsed="0.517636"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:22:37.787854" elapsed="0.594238"/>
+</kw>
+<kw name="Wait Until Page Ready" owner="resource">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-05T16:22:38.382447" elapsed="0.009472"/>
+</kw>
+<kw name="Wait Until Any Loaders Disappear" owner="resource">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:38.392709" elapsed="0.007795"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:38.392530" elapsed="0.008095"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:38.401005" elapsed="0.007828"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:38.400805" elapsed="0.008121"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:38.409226" elapsed="0.005907"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:38.409068" elapsed="0.006274"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:38.415621" elapsed="0.004613"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:38.415478" elapsed="0.004830"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:22:38.392204" elapsed="0.028159"/>
+</kw>
+<kw name="Wait Until Network Is Idle" owner="resource">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:38.421065" level="INFO">Executing JavaScript:
+return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);
+Without any arguments.</msg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:22:38.420809" elapsed="0.004707"/>
+</kw>
+<arg>10x</arg>
+<arg>1s</arg>
+<arg>Execute JavaScript</arg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-09-05T16:22:38.420674" elapsed="0.004922"/>
+</kw>
+<doc>Waits until there are no active network requests (XHR/fetch)</doc>
+<status status="PASS" start="2025-09-05T16:22:38.420484" elapsed="0.005190"/>
+</kw>
+<kw name="Wait Until DOM Is Stable" owner="resource">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:38.426717" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:22:38.430603" level="INFO">${initial} = 65</msg>
+<var>${initial}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:22:38.426256" elapsed="0.004384"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-05T16:22:38.931531" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-05T16:22:38.430787" elapsed="0.500910"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:38.933282" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:22:38.940382" level="INFO">${after} = 83</msg>
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:22:38.931985" elapsed="0.008441"/>
+</kw>
+<while condition="${initial} != ${after}">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-09-05T16:22:38.941265" level="INFO">${initial} = 83</msg>
+<var>${initial}</var>
+<arg>${after}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-09-05T16:22:38.941014" elapsed="0.000291"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-05T16:22:39.441848" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-05T16:22:38.941483" elapsed="0.500532"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:39.442665" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:22:39.457109" level="INFO">${after} = 83</msg>
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:22:39.442267" elapsed="0.014920"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:22:38.940516" elapsed="0.516787"/>
+</iter>
+<status status="PASS" start="2025-09-05T16:22:38.940514" elapsed="0.517103"/>
+</while>
+<status status="PASS" start="2025-09-05T16:22:38.425934" elapsed="1.031824"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:22:38.382220" elapsed="1.075631"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:22:29.310661" elapsed="10.147275"/>
+</kw>
+<kw name="open jobs page" owner="BULK_EDIT">
+<kw name="Wait Until Page Ready" owner="resource">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-05T16:22:39.459221" elapsed="0.013088"/>
+</kw>
+<kw name="Wait Until Any Loaders Disappear" owner="resource">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:39.473373" elapsed="0.011754"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:39.473166" elapsed="0.012174"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:39.486109" elapsed="0.012953"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:39.485688" elapsed="0.013596"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:39.500008" elapsed="0.011893"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:39.499638" elapsed="0.012479"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:22:39.512804" elapsed="0.012133"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:22:39.512442" elapsed="0.012800"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:22:39.472757" elapsed="0.052653"/>
+</kw>
+<kw name="Wait Until Network Is Idle" owner="resource">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:39.527574" level="INFO">Executing JavaScript:
+return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);
+Without any arguments.</msg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:22:39.526688" elapsed="0.012988"/>
+</kw>
+<arg>10x</arg>
+<arg>1s</arg>
+<arg>Execute JavaScript</arg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-09-05T16:22:39.526299" elapsed="0.013566"/>
+</kw>
+<doc>Waits until there are no active network requests (XHR/fetch)</doc>
+<status status="PASS" start="2025-09-05T16:22:39.525777" elapsed="0.014244"/>
+</kw>
+<kw name="Wait Until DOM Is Stable" owner="resource">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:39.541159" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:22:39.550724" level="INFO">${initial} = 83</msg>
+<var>${initial}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:22:39.540615" elapsed="0.010197"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-05T16:22:40.052011" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-05T16:22:39.551107" elapsed="0.501079"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:22:40.053222" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:22:40.061917" level="INFO">${after} = 83</msg>
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:22:40.052471" elapsed="0.009575"/>
+</kw>
+<while condition="${initial} != ${after}">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${initial}</var>
+<arg>${after}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-09-05T16:22:40.063196" elapsed="0.000125"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-09-05T16:22:40.063691" elapsed="0.000090"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-09-05T16:22:40.064127" elapsed="0.000091"/>
+</kw>
+<status status="NOT RUN" start="2025-09-05T16:22:40.062302" elapsed="0.002067"/>
+</iter>
+<status status="NOT RUN" start="2025-09-05T16:22:40.062299" elapsed="0.002194"/>
+</while>
+<status status="PASS" start="2025-09-05T16:22:39.540284" elapsed="0.524420"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:22:39.458851" elapsed="0.606063"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:10.243720" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-09-05T16:23:10.244026" level="FAIL">Element '//li[@class='nav-section-item ']//a' did not appear in 30 seconds.</msg>
+<arg>//li[@class='nav-section-item ']//a</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="FAIL" start="2025-09-05T16:22:40.065261" elapsed="30.183714">Element '//li[@class='nav-section-item ']//a' did not appear in 30 seconds.</status>
+</kw>
+<kw name="Wait Until Page Ready" owner="resource">
+<status status="NOT RUN" start="2025-09-05T16:23:10.249424" elapsed="0.000073"/>
+</kw>
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<arg>//li[@class='nav-section-item ']//a</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="NOT RUN" start="2025-09-05T16:23:10.249669" elapsed="0.000043"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//a[@href='/job-order']</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-09-05T16:23:10.249842" elapsed="0.000027"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//a[@href='/job-order']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-09-05T16:23:10.249982" elapsed="0.000035"/>
+</kw>
+<status status="FAIL" start="2025-09-05T16:22:39.458427" elapsed="30.791859">Element '//li[@class='nav-section-item ']//a' did not appear in 30 seconds.</status>
+</kw>
+<kw name="Open positions/All Job Requisites" owner="BULK_EDIT">
+<status status="NOT RUN" start="2025-09-05T16:23:10.250818" elapsed="0.000058"/>
+</kw>
+<kw name="Filter jobs that can be bulk edited" owner="BULK_EDIT">
+<status status="NOT RUN" start="2025-09-05T16:23:10.251302" elapsed="0.000063"/>
+</kw>
+<kw name="enable bulk edit option" owner="BULK_EDIT">
+<status status="NOT RUN" start="2025-09-05T16:23:10.251839" elapsed="0.000084"/>
+</kw>
+<kw name="select all jobs" owner="BULK_EDIT">
+<status status="NOT RUN" start="2025-09-05T16:23:10.252440" elapsed="0.000093"/>
+</kw>
+<kw name="bulk edit jobs" owner="BULK_EDIT">
+<status status="NOT RUN" start="2025-09-05T16:23:10.253194" elapsed="0.000107"/>
+</kw>
+<kw name="close browser session" owner="resource" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-09-05T16:23:10.254206" elapsed="2.486718"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:23:10.253816" elapsed="2.487252"/>
+</kw>
+<status status="FAIL" start="2025-09-05T16:22:29.309167" elapsed="43.432166">Element '//li[@class='nav-section-item ']//a' did not appear in 30 seconds.</status>
+</test>
+<test id="s1-t2" name="Verify if user is able to bulk select jobs to edit with open status" line="21">
+<kw name="open browser with url and login" owner="resource" type="SETUP">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:12.744550" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>${BROWSER}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-09-05T16:23:12.744360" elapsed="1.575315"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:14.320691" level="INFO">Opening url 'https://costrategi-security-qa2.internal-definitywfs.com/signin'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-09-05T16:23:14.320344" elapsed="4.437169"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-09-05T16:23:18.757846" elapsed="0.067951"/>
+</kw>
+<kw name="Wait Until Page Ready" owner="resource">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-05T16:23:18.826863" elapsed="0.025593"/>
+</kw>
+<kw name="Wait Until Any Loaders Disappear" owner="resource">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:18.853967" elapsed="0.016099"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:18.853443" elapsed="0.016814"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:18.870892" elapsed="0.015928"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:18.870566" elapsed="0.016394"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:18.887784" elapsed="0.014597"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:18.887316" elapsed="0.015244"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:18.903162" elapsed="0.015078"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:18.902857" elapsed="0.015563"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:23:18.852908" elapsed="0.065669"/>
+</kw>
+<kw name="Wait Until Network Is Idle" owner="resource">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:18.920657" level="INFO">Executing JavaScript:
+return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);
+Without any arguments.</msg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:23:18.919908" elapsed="0.012638"/>
+</kw>
+<arg>10x</arg>
+<arg>1s</arg>
+<arg>Execute JavaScript</arg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-09-05T16:23:18.919420" elapsed="0.013309"/>
+</kw>
+<doc>Waits until there are no active network requests (XHR/fetch)</doc>
+<status status="PASS" start="2025-09-05T16:23:18.918887" elapsed="0.013980"/>
+</kw>
+<kw name="Wait Until DOM Is Stable" owner="resource">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:18.934315" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:23:18.941455" level="INFO">${initial} = 67</msg>
+<var>${initial}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:23:18.933724" elapsed="0.007791"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-05T16:23:19.442262" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-05T16:23:18.941791" elapsed="0.500854"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:19.443635" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:23:19.450473" level="INFO">${after} = 67</msg>
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:23:19.442909" elapsed="0.007601"/>
+</kw>
+<while condition="${initial} != ${after}">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${initial}</var>
+<arg>${after}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-09-05T16:23:19.450853" elapsed="0.000024"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-09-05T16:23:19.450962" elapsed="0.000018"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-09-05T16:23:19.451061" elapsed="0.000034"/>
+</kw>
+<status status="NOT RUN" start="2025-09-05T16:23:19.450598" elapsed="0.000526"/>
+</iter>
+<status status="NOT RUN" start="2025-09-05T16:23:19.450597" elapsed="0.000551"/>
+</while>
+<status status="PASS" start="2025-09-05T16:23:18.933226" elapsed="0.517991"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:23:18.826255" elapsed="0.625015"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:19.451487" level="INFO">Typing text 'sonu.satyam@costrategix.com' into text field 'xpath://input[@name='emailAddress']'.</msg>
+<arg>xpath://input[@name='emailAddress']</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T16:23:19.451336" elapsed="0.220159"/>
+</kw>
+<kw name="Wait Until Page Ready" owner="resource">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-05T16:23:19.672036" elapsed="0.009174"/>
+</kw>
+<kw name="Wait Until Any Loaders Disappear" owner="resource">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:19.682767" elapsed="0.009798"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:19.682404" elapsed="0.010262"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:19.692995" elapsed="0.009064"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:19.692823" elapsed="0.009338"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:19.702496" elapsed="0.009835"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:19.702319" elapsed="0.010108"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:19.712743" elapsed="0.008933"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:19.712578" elapsed="0.009193"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:23:19.681836" elapsed="0.040008"/>
+</kw>
+<kw name="Wait Until Network Is Idle" owner="resource">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:19.722736" level="INFO">Executing JavaScript:
+return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);
+Without any arguments.</msg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:23:19.722419" elapsed="0.006090"/>
+</kw>
+<arg>10x</arg>
+<arg>1s</arg>
+<arg>Execute JavaScript</arg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-09-05T16:23:19.722240" elapsed="0.006359"/>
+</kw>
+<doc>Waits until there are no active network requests (XHR/fetch)</doc>
+<status status="PASS" start="2025-09-05T16:23:19.722000" elapsed="0.006673"/>
+</kw>
+<kw name="Wait Until DOM Is Stable" owner="resource">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:19.729437" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:23:19.736439" level="INFO">${initial} = 67</msg>
+<var>${initial}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:23:19.729113" elapsed="0.007372"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-05T16:23:20.237183" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-05T16:23:19.736637" elapsed="0.500655"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:20.237832" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:23:20.243826" level="INFO">${after} = 67</msg>
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:23:20.237476" elapsed="0.006391"/>
+</kw>
+<while condition="${initial} != ${after}">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${initial}</var>
+<arg>${after}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-09-05T16:23:20.244228" elapsed="0.000028"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-09-05T16:23:20.244344" elapsed="0.000022"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-09-05T16:23:20.244459" elapsed="0.000022"/>
+</kw>
+<status status="NOT RUN" start="2025-09-05T16:23:20.243949" elapsed="0.000565"/>
+</iter>
+<status status="NOT RUN" start="2025-09-05T16:23:20.243948" elapsed="0.000595"/>
+</while>
+<status status="PASS" start="2025-09-05T16:23:19.728858" elapsed="0.515741"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:23:19.671746" elapsed="0.572899"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:20.244913" level="INFO">Typing password into text field 'xpath://input[@name='password']'.</msg>
+<msg time="2025-09-05T16:23:20.315552" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>xpath://input[@name='password']</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T16:23:20.244724" elapsed="0.165639"/>
+</kw>
+<kw name="Wait Until Page Ready" owner="resource">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-05T16:23:20.410910" elapsed="0.012189"/>
+</kw>
+<kw name="Wait Until Any Loaders Disappear" owner="resource">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:20.423901" elapsed="0.009859"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:20.423707" elapsed="0.010231"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:20.434669" elapsed="0.010346"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:20.434341" elapsed="0.010857"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:20.445794" elapsed="0.010071"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:20.445479" elapsed="0.010497"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:20.456335" elapsed="0.008526"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:20.456151" elapsed="0.008894"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:23:20.423379" elapsed="0.041809"/>
+</kw>
+<kw name="Wait Until Network Is Idle" owner="resource">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:20.467299" level="INFO">Executing JavaScript:
+return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);
+Without any arguments.</msg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:23:20.466592" elapsed="0.007242"/>
+</kw>
+<arg>10x</arg>
+<arg>1s</arg>
+<arg>Execute JavaScript</arg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-09-05T16:23:20.466002" elapsed="0.007943"/>
+</kw>
+<doc>Waits until there are no active network requests (XHR/fetch)</doc>
+<status status="PASS" start="2025-09-05T16:23:20.465488" elapsed="0.008541"/>
+</kw>
+<kw name="Wait Until DOM Is Stable" owner="resource">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:20.474874" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:23:20.480728" level="INFO">${initial} = 67</msg>
+<var>${initial}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:23:20.474522" elapsed="0.006250"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-05T16:23:20.981687" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-05T16:23:20.480929" elapsed="0.500861"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:20.982271" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:23:20.990467" level="INFO">${after} = 67</msg>
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:23:20.981953" elapsed="0.008571"/>
+</kw>
+<while condition="${initial} != ${after}">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${initial}</var>
+<arg>${after}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-09-05T16:23:20.990979" elapsed="0.000034"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-09-05T16:23:20.991115" elapsed="0.000022"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-09-05T16:23:20.991223" elapsed="0.000020"/>
+</kw>
+<status status="NOT RUN" start="2025-09-05T16:23:20.990641" elapsed="0.000647"/>
+</iter>
+<status status="NOT RUN" start="2025-09-05T16:23:20.990639" elapsed="0.000683"/>
+</while>
+<status status="PASS" start="2025-09-05T16:23:20.474246" elapsed="0.517140"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:23:20.410613" elapsed="0.580817"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:20.991665" level="INFO">Clicking button 'xpath://button[@type='submit']'.</msg>
+<arg>xpath://button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T16:23:20.991506" elapsed="0.135946"/>
+</kw>
+<kw name="Wait Until Page Ready" owner="resource">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.128096" elapsed="0.010725"/>
+</kw>
+<kw name="Wait Until Any Loaders Disappear" owner="resource">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.139685" elapsed="0.010875"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.139498" elapsed="0.011262"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.151301" elapsed="0.010208"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.151032" elapsed="0.010580"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.162071" elapsed="0.010844"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.161771" elapsed="0.011252"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.173369" elapsed="0.009940"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.173190" elapsed="0.010219"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:23:21.139096" elapsed="0.044389"/>
+</kw>
+<kw name="Wait Until Network Is Idle" owner="resource">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:21.184417" level="INFO">Executing JavaScript:
+return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);
+Without any arguments.</msg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.184082" elapsed="0.006383"/>
+</kw>
+<arg>10x</arg>
+<arg>1s</arg>
+<arg>Execute JavaScript</arg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.183902" elapsed="0.006650"/>
+</kw>
+<doc>Waits until there are no active network requests (XHR/fetch)</doc>
+<status status="PASS" start="2025-09-05T16:23:21.183649" elapsed="0.006980"/>
+</kw>
+<kw name="Wait Until DOM Is Stable" owner="resource">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:21.191359" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:23:21.195604" level="INFO">${initial} = 65</msg>
+<var>${initial}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.191056" elapsed="0.004591"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-05T16:23:21.696277" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.195794" elapsed="0.500649"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:21.697139" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:23:21.702594" level="INFO">${after} = 65</msg>
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.696676" elapsed="0.005965"/>
+</kw>
+<while condition="${initial} != ${after}">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${initial}</var>
+<arg>${after}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-09-05T16:23:21.703030" elapsed="0.000030"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-09-05T16:23:21.703234" elapsed="0.000026"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-09-05T16:23:21.703383" elapsed="0.000039"/>
+</kw>
+<status status="NOT RUN" start="2025-09-05T16:23:21.702729" elapsed="0.000748"/>
+</iter>
+<status status="NOT RUN" start="2025-09-05T16:23:21.702728" elapsed="0.000794"/>
+</while>
+<status status="PASS" start="2025-09-05T16:23:21.190822" elapsed="0.512795"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:23:21.127749" elapsed="0.575939"/>
+</kw>
+<kw name="Wait Until Page Ready" owner="resource">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.704259" elapsed="0.007500"/>
+</kw>
+<kw name="Wait Until Any Loaders Disappear" owner="resource">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.712407" elapsed="0.008084"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.712253" elapsed="0.008381"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.720981" elapsed="0.009193"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.720801" elapsed="0.009484"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.730648" elapsed="0.008655"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.730463" elapsed="0.009009"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.739878" elapsed="0.007197"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.739672" elapsed="0.007516"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:23:21.711985" elapsed="0.035363"/>
+</kw>
+<kw name="Wait Until Network Is Idle" owner="resource">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:21.748912" level="INFO">Executing JavaScript:
+return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);
+Without any arguments.</msg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.748367" elapsed="0.006048"/>
+</kw>
+<arg>10x</arg>
+<arg>1s</arg>
+<arg>Execute JavaScript</arg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.748053" elapsed="0.006521"/>
+</kw>
+<doc>Waits until there are no active network requests (XHR/fetch)</doc>
+<status status="PASS" start="2025-09-05T16:23:21.747610" elapsed="0.007066"/>
+</kw>
+<kw name="Wait Until DOM Is Stable" owner="resource">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:21.755740" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:23:21.760467" level="INFO">${initial} = 65</msg>
+<var>${initial}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.755306" elapsed="0.005213"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-05T16:23:22.261703" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-05T16:23:21.760689" elapsed="0.501202"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:22.262878" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:23:22.268946" level="INFO">${after} = 83</msg>
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:23:22.262227" elapsed="0.006784"/>
+</kw>
+<while condition="${initial} != ${after}">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-09-05T16:23:22.269888" level="INFO">${initial} = 83</msg>
+<var>${initial}</var>
+<arg>${after}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-09-05T16:23:22.269588" elapsed="0.000344"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-05T16:23:22.771524" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-05T16:23:22.270094" elapsed="0.501636"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:22.772805" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:23:22.830591" level="INFO">${after} = 83</msg>
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:23:22.772092" elapsed="0.058600"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:23:22.269135" elapsed="0.561700"/>
+</iter>
+<status status="PASS" start="2025-09-05T16:23:22.269133" elapsed="0.562224"/>
+</while>
+<status status="PASS" start="2025-09-05T16:23:21.754960" elapsed="1.076599"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:23:21.703874" elapsed="1.127831"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:23:12.743879" elapsed="10.087928"/>
+</kw>
+<kw name="open jobs page" owner="BULK_EDIT">
+<kw name="Wait Until Page Ready" owner="resource">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-05T16:23:22.833817" elapsed="0.037599"/>
+</kw>
+<kw name="Wait Until Any Loaders Disappear" owner="resource">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:22.873413" elapsed="0.118351"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:22.872468" elapsed="0.119502"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:22.993044" elapsed="0.066063"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:22.992474" elapsed="0.066916"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:23.060992" elapsed="0.040787"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:23.060083" elapsed="0.042059"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:23:23.103666" elapsed="0.054269"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:23:23.103023" elapsed="0.055169"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:23:22.871898" elapsed="0.286482"/>
+</kw>
+<kw name="Wait Until Network Is Idle" owner="resource">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:23.160757" level="INFO">Executing JavaScript:
+return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);
+Without any arguments.</msg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:23:23.159998" elapsed="0.015284"/>
+</kw>
+<arg>10x</arg>
+<arg>1s</arg>
+<arg>Execute JavaScript</arg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-09-05T16:23:23.159364" elapsed="0.016336"/>
+</kw>
+<doc>Waits until there are no active network requests (XHR/fetch)</doc>
+<status status="PASS" start="2025-09-05T16:23:23.158730" elapsed="0.017174"/>
+</kw>
+<kw name="Wait Until DOM Is Stable" owner="resource">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:23.178118" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:23:23.193879" level="INFO">${initial} = 83</msg>
+<var>${initial}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:23:23.177064" elapsed="0.016904"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-05T16:23:23.722176" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-05T16:23:23.194455" elapsed="0.528019"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:23.725387" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:23:23.753651" level="INFO">${after} = 83</msg>
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:23:23.723682" elapsed="0.030069"/>
+</kw>
+<while condition="${initial} != ${after}">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${initial}</var>
+<arg>${after}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-09-05T16:23:23.754667" elapsed="0.000063"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-09-05T16:23:23.754953" elapsed="0.000061"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-09-05T16:23:23.755372" elapsed="0.000078"/>
+</kw>
+<status status="NOT RUN" start="2025-09-05T16:23:23.753976" elapsed="0.001577"/>
+</iter>
+<status status="NOT RUN" start="2025-09-05T16:23:23.753972" elapsed="0.001657"/>
+</while>
+<status status="PASS" start="2025-09-05T16:23:23.176350" elapsed="0.579428"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:23:22.833313" elapsed="0.922688"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:53.962960" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-09-05T16:23:53.963130" level="FAIL">Element '//li[@class='nav-section-item ']//a' did not appear in 30 seconds.</msg>
+<arg>//li[@class='nav-section-item ']//a</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="FAIL" start="2025-09-05T16:23:23.756272" elapsed="30.207758">Element '//li[@class='nav-section-item ']//a' did not appear in 30 seconds.</status>
+</kw>
+<kw name="Wait Until Page Ready" owner="resource">
+<status status="NOT RUN" start="2025-09-05T16:23:53.964393" elapsed="0.000074"/>
+</kw>
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<arg>//li[@class='nav-section-item ']//a</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="NOT RUN" start="2025-09-05T16:23:53.964628" elapsed="0.000038"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//a[@href='/job-order']</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-09-05T16:23:53.964805" elapsed="0.000034"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//a[@href='/job-order']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-09-05T16:23:53.964975" elapsed="0.000032"/>
+</kw>
+<status status="FAIL" start="2025-09-05T16:23:22.832677" elapsed="31.132491">Element '//li[@class='nav-section-item ']//a' did not appear in 30 seconds.</status>
+</kw>
+<kw name="Open positions/All Job Requisites" owner="BULK_EDIT">
+<status status="NOT RUN" start="2025-09-05T16:23:53.965568" elapsed="0.000038"/>
+</kw>
+<kw name="Filter open jobs" owner="BULK_EDIT">
+<status status="NOT RUN" start="2025-09-05T16:23:53.965908" elapsed="0.000033"/>
+</kw>
+<kw name="enable bulk edit option" owner="BULK_EDIT">
+<status status="NOT RUN" start="2025-09-05T16:23:53.966170" elapsed="0.000053"/>
+</kw>
+<kw name="select first job for bulk edit" owner="BULK_EDIT">
+<status status="NOT RUN" start="2025-09-05T16:23:53.966495" elapsed="0.000057"/>
+</kw>
+<kw name="bulk edit jobs" owner="BULK_EDIT">
+<status status="NOT RUN" start="2025-09-05T16:23:53.966867" elapsed="0.000057"/>
+</kw>
+<kw name="close browser session" owner="resource" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-09-05T16:23:53.967894" elapsed="2.466950"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:23:53.967441" elapsed="2.467581"/>
+</kw>
+<status status="FAIL" start="2025-09-05T16:23:12.742404" elapsed="43.692891">Element '//li[@class='nav-section-item ']//a' did not appear in 30 seconds.</status>
+</test>
+<test id="s1-t3" name="Verify if user is able to bulk select jobs to edit with offer pending approval status" line="29">
+<kw name="open browser with url and login" owner="resource" type="SETUP">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:56.437349" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>${BROWSER}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-09-05T16:23:56.437199" elapsed="1.752857"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:23:58.190726" level="INFO">Opening url 'https://costrategi-security-qa2.internal-definitywfs.com/signin'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-09-05T16:23:58.190410" elapsed="3.771270"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-09-05T16:24:01.961895" elapsed="0.126414"/>
+</kw>
+<kw name="Wait Until Page Ready" owner="resource">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-05T16:24:02.089364" elapsed="0.036179"/>
+</kw>
+<kw name="Wait Until Any Loaders Disappear" owner="resource">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:24:02.127264" elapsed="0.042610"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:24:02.126912" elapsed="0.043396"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:24:02.171008" elapsed="0.016465"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:24:02.170631" elapsed="0.016987"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:24:02.188048" elapsed="0.013812"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:24:02.187819" elapsed="0.014254"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:24:02.202727" elapsed="0.015687"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:24:02.202382" elapsed="0.016159"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:24:02.126113" elapsed="0.092523"/>
+</kw>
+<kw name="Wait Until Network Is Idle" owner="resource">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:24:02.219868" level="INFO">Executing JavaScript:
+return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);
+Without any arguments.</msg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:24:02.219412" elapsed="0.006446"/>
+</kw>
+<arg>10x</arg>
+<arg>1s</arg>
+<arg>Execute JavaScript</arg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-09-05T16:24:02.219167" elapsed="0.006811"/>
+</kw>
+<doc>Waits until there are no active network requests (XHR/fetch)</doc>
+<status status="PASS" start="2025-09-05T16:24:02.218835" elapsed="0.007239"/>
+</kw>
+<kw name="Wait Until DOM Is Stable" owner="resource">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:24:02.227058" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:24:02.234221" level="INFO">${initial} = 67</msg>
+<var>${initial}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:24:02.226645" elapsed="0.007644"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-05T16:24:02.737584" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-05T16:24:02.234559" elapsed="0.503124"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:24:02.738132" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:24:02.746956" level="INFO">${after} = 67</msg>
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:24:02.737839" elapsed="0.009162"/>
+</kw>
+<while condition="${initial} != ${after}">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${initial}</var>
+<arg>${after}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-09-05T16:24:02.747358" elapsed="0.000022"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-09-05T16:24:02.747444" elapsed="0.000019"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-09-05T16:24:02.747546" elapsed="0.000026"/>
+</kw>
+<status status="NOT RUN" start="2025-09-05T16:24:02.747094" elapsed="0.000505"/>
+</iter>
+<status status="NOT RUN" start="2025-09-05T16:24:02.747092" elapsed="0.000532"/>
+</while>
+<status status="PASS" start="2025-09-05T16:24:02.226323" elapsed="0.521368"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:24:02.088771" elapsed="0.658972"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:24:02.748004" level="INFO">Typing text 'sonu.satyam@costrategix.com' into text field 'xpath://input[@name='emailAddress']'.</msg>
+<arg>xpath://input[@name='emailAddress']</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T16:24:02.747828" elapsed="0.221896"/>
+</kw>
+<kw name="Wait Until Page Ready" owner="resource">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-05T16:24:02.970712" elapsed="0.009381"/>
+</kw>
+<kw name="Wait Until Any Loaders Disappear" owner="resource">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:24:02.980864" elapsed="0.010031"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:24:02.980684" elapsed="0.010330"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:24:02.991422" elapsed="0.008027"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:24:02.991214" elapsed="0.008428"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:24:03.000028" elapsed="0.006988"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:24:02.999830" elapsed="0.007299"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:24:03.007498" elapsed="0.007233"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:24:03.007305" elapsed="0.007718"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:24:02.980366" elapsed="0.034815"/>
+</kw>
+<kw name="Wait Until Network Is Idle" owner="resource">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:24:03.016734" level="INFO">Executing JavaScript:
+return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);
+Without any arguments.</msg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:24:03.016061" elapsed="0.005963"/>
+</kw>
+<arg>10x</arg>
+<arg>1s</arg>
+<arg>Execute JavaScript</arg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-09-05T16:24:03.015783" elapsed="0.006350"/>
+</kw>
+<doc>Waits until there are no active network requests (XHR/fetch)</doc>
+<status status="PASS" start="2025-09-05T16:24:03.015428" elapsed="0.006792"/>
+</kw>
+<kw name="Wait Until DOM Is Stable" owner="resource">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:24:03.023719" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:24:03.027999" level="INFO">${initial} = 67</msg>
+<var>${initial}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:24:03.022727" elapsed="0.005320"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-05T16:24:03.528865" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-05T16:24:03.028222" elapsed="0.500774"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:24:03.529791" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:24:03.536576" level="INFO">${after} = 67</msg>
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:24:03.529260" elapsed="0.007351"/>
+</kw>
+<while condition="${initial} != ${after}">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${initial}</var>
+<arg>${after}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-09-05T16:24:03.536923" elapsed="0.000025"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-09-05T16:24:03.537015" elapsed="0.000017"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-09-05T16:24:03.537108" elapsed="0.000017"/>
+</kw>
+<status status="NOT RUN" start="2025-09-05T16:24:03.536680" elapsed="0.000470"/>
+</iter>
+<status status="NOT RUN" start="2025-09-05T16:24:03.536679" elapsed="0.000496"/>
+</while>
+<status status="PASS" start="2025-09-05T16:24:03.022438" elapsed="0.514786"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:24:02.970156" elapsed="0.567102"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:24:03.537469" level="INFO">Typing password into text field 'xpath://input[@name='password']'.</msg>
+<msg time="2025-09-05T16:24:03.564715" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>xpath://input[@name='password']</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T16:24:03.537317" elapsed="0.093171"/>
+</kw>
+<kw name="Wait Until Page Ready" owner="resource">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-05T16:24:03.631103" elapsed="0.010457"/>
+</kw>
+<kw name="Wait Until Any Loaders Disappear" owner="resource">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:24:03.642288" elapsed="0.026307"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:24:03.642118" elapsed="0.026573"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:24:03.669002" elapsed="0.007715"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:24:03.668843" elapsed="0.007971"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:24:03.677113" elapsed="0.015362"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:24:03.676959" elapsed="0.015666"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:24:03.692925" elapsed="0.008503"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:24:03.692773" elapsed="0.008755"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:24:03.641814" elapsed="0.059788"/>
+</kw>
+<kw name="Wait Until Network Is Idle" owner="resource">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:24:03.702621" level="INFO">Executing JavaScript:
+return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);
+Without any arguments.</msg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:24:03.702236" elapsed="0.005615"/>
+</kw>
+<arg>10x</arg>
+<arg>1s</arg>
+<arg>Execute JavaScript</arg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-09-05T16:24:03.702045" elapsed="0.005906"/>
+</kw>
+<doc>Waits until there are no active network requests (XHR/fetch)</doc>
+<status status="PASS" start="2025-09-05T16:24:03.701760" elapsed="0.006274"/>
+</kw>
+<kw name="Wait Until DOM Is Stable" owner="resource">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:24:03.708870" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:24:03.713165" level="INFO">${initial} = 67</msg>
+<var>${initial}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:24:03.708508" elapsed="0.004705"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-05T16:24:04.222056" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-05T16:24:03.713388" elapsed="0.508851"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:24:04.223293" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:24:04.228764" level="INFO">${after} = 67</msg>
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:24:04.222577" elapsed="0.006226"/>
+</kw>
+<while condition="${initial} != ${after}">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${initial}</var>
+<arg>${after}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-09-05T16:24:04.229176" elapsed="0.000031"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-09-05T16:24:04.229296" elapsed="0.000024"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-09-05T16:24:04.229431" elapsed="0.000025"/>
+</kw>
+<status status="NOT RUN" start="2025-09-05T16:24:04.228878" elapsed="0.000612"/>
+</iter>
+<status status="NOT RUN" start="2025-09-05T16:24:04.228877" elapsed="0.000641"/>
+</while>
+<status status="PASS" start="2025-09-05T16:24:03.708241" elapsed="0.521342"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:24:03.630767" elapsed="0.598865"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:24:04.229880" level="INFO">Clicking button 'xpath://button[@type='submit']'.</msg>
+<arg>xpath://button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T16:24:04.229721" elapsed="0.138071"/>
+</kw>
+<kw name="Wait Until Page Ready" owner="resource">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-05T16:24:04.368879" elapsed="0.009547"/>
+</kw>
+<kw name="Wait Until Any Loaders Disappear" owner="resource">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:24:04.379673" elapsed="0.010148"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'page-loader')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:24:04.379373" elapsed="0.010568"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:24:04.390392" elapsed="0.009952"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'loading-overlay')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:24:04.390126" elapsed="0.010349"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:24:04.400994" elapsed="0.007212"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'vm-loading-wrapper')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:24:04.400754" elapsed="0.007562"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-09-05T16:24:04.408677" elapsed="0.017361"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class, 'modal-backdrop')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-09-05T16:24:04.408487" elapsed="0.017728"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:24:04.378853" elapsed="0.047584"/>
+</kw>
+<kw name="Wait Until Network Is Idle" owner="resource">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:24:04.428285" level="INFO">Executing JavaScript:
+return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);
+Without any arguments.</msg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:24:04.427613" elapsed="0.008932"/>
+</kw>
+<arg>10x</arg>
+<arg>1s</arg>
+<arg>Execute JavaScript</arg>
+<arg>return window.performance.getEntriesByType('resource').filter(e =&gt; e.initiatorType === 'xmlhttprequest' || e.initiatorType === 'fetch').every(e =&gt; e.responseEnd &gt; 0);</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-09-05T16:24:04.427232" elapsed="0.009436"/>
+</kw>
+<doc>Waits until there are no active network requests (XHR/fetch)</doc>
+<status status="PASS" start="2025-09-05T16:24:04.426722" elapsed="0.010041"/>
+</kw>
+<kw name="Wait Until DOM Is Stable" owner="resource">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:24:04.437998" level="INFO">Executing JavaScript:
+return document.getElementsByTagName('*').length;
+Without any arguments.</msg>
+<msg time="2025-09-05T16:24:04.442691" level="INFO">${initial} = 65</msg>
+<var>${initial}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T16:24:04.437407" elapsed="0.005335"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="FAIL" start="2025-09-05T16:24:04.442924" elapsed="0.405732">Execution terminated by signal</status>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-09-05T16:24:04.848981" elapsed="0.000054"/>
+</kw>
+<while condition="${initial} != ${after}">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${initial}</var>
+<arg>${after}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-09-05T16:24:04.849355" elapsed="0.000035"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-09-05T16:24:04.849504" elapsed="0.000028"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<var>${after}</var>
+<arg>return document.getElementsByTagName('*').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-09-05T16:24:04.849621" elapsed="0.000024"/>
+</kw>
+<status status="NOT RUN" start="2025-09-05T16:24:04.849128" elapsed="0.000558"/>
+</iter>
+<status status="NOT RUN" start="2025-09-05T16:24:04.849126" elapsed="0.000590"/>
+</while>
+<status status="FAIL" start="2025-09-05T16:24:04.437069" elapsed="0.412769">Execution terminated by signal</status>
+</kw>
+<status status="FAIL" start="2025-09-05T16:24:04.368305" elapsed="0.481629">Execution terminated by signal</status>
+</kw>
+<kw name="Wait Until Page Ready" owner="resource">
+<status status="NOT RUN" start="2025-09-05T16:24:04.850119" elapsed="0.000051"/>
+</kw>
+<status status="FAIL" start="2025-09-05T16:23:56.436914" elapsed="8.413336">Execution terminated by signal</status>
+</kw>
+<kw name="close browser session" owner="resource" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<msg time="2025-09-05T16:24:08.914986" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000186ADABFED0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/f08c2755b502421b10d586de0f0f59cc</msg>
+<msg time="2025-09-05T16:24:12.999415" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000186ADAAE780&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/f08c2755b502421b10d586de0f0f59cc</msg>
+<msg time="2025-09-05T16:24:17.063514" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000186ADAAEFD0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/f08c2755b502421b10d586de0f0f59cc</msg>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-09-05T16:24:04.851624" elapsed="16.307882"/>
+</kw>
+<status status="PASS" start="2025-09-05T16:24:04.851232" elapsed="16.308393"/>
+</kw>
+<status status="FAIL" start="2025-09-05T16:23:56.436166" elapsed="24.723756">Setup failed:
+Execution terminated by signal</status>
+</test>
+<test id="s1-t4" name="Verify user is not able to bulk edit the jobs when the status is Offers accepted, Filled,Completed, Rejected, Closed Status for jobs" line="37">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.161081" elapsed="0.000486">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t5" name="Verify if user is able to unselect all jobs" line="44">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.162550" elapsed="0.000615">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t6" name="Verify if &quot;Edit selected rows&quot; button is enabled only when atleast 1 job is selected." line="52">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.163911" elapsed="0.000594">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t7" name="Verify if user is able to add new tags on edit" line="60">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.165638" elapsed="0.000539">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t8" name="Verify if user is able to add existing tags on edit" line="80">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.166931" elapsed="0.000531">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t9" name="Verify if user is able to add max of 5 tags" line="91">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.168305" elapsed="0.000528">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t10" name="Verify the Pay package tab header info" line="110">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.169772" elapsed="0.000510">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t11" name="Verify if regular rate is blank by default" line="122">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.171325" elapsed="0.000488">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t12" name="Verify if regular rate is updated in job after bulk edit" line="133">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.172573" elapsed="0.000359">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t13" name="Verify if Regular rate can be left blank" line="153">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.173518" elapsed="0.000403">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t14" name="Verify the Pay package for existing Talents after Regular rate is updated , Must consider the old rate" line="167">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.174436" elapsed="0.000540">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t15" name="Verify the Pay package for new Talents after Regular rated are updated, Must consider the updated rates" line="191">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.175854" elapsed="0.000453">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t16" name="Verify if the OT rules are unselected by default" line="225">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.177266" elapsed="0.000499">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t17" name="Verify if user is able to edit job with OT - Daily enabled with 1 rule or more rules" line="236">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.178634" elapsed="0.000745">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t18" name="Verify if user is able to edit job with OT - Weekly enabled with 1 rule or more rules" line="248">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.180360" elapsed="0.000552">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t19" name="Verify if user is able to edit job with OT - Consecutive days enabled with 1 rule or more rules" line="261">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.181897" elapsed="0.000490">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t20" name="Verify if user is able to edit job with all the 3 OT rules enabled" line="273">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.183300" elapsed="0.000295">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t21" name="Verify if OT rules can be left blank - Daily, weekly and Consecutive days" line="287">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.184152" elapsed="0.000436">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t22" name="Verify the Pay package for existing Talents after OT are updated Must consider the old rate" line="301">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.185352" elapsed="0.000577">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t23" name="Verify the Pay package for new Talents after OT are updated Must consider the updated rates" line="328">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.186734" elapsed="0.000646">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t24" name="Verify if user is able to add a credential on edit" line="365">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.188196" elapsed="0.000418">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t25" name="Based on the text value entered, matching credentials should be filtered and displayed" line="387">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.189465" elapsed="0.000509">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t26" name="Do not select Credential Name field and Action dropdown value, enter regular rate or start date value, Submit button should be enabled" line="401">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.190942" elapsed="0.000678">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t27" name="Select any Credential Name field and select the Action dropdown value, Submit button should be enabled" line="411">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.192439" elapsed="0.000704">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t28" name="Select any Credential Name field and do not select the Action dropdown value, Submit button should be disabled" line="424">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.193804" elapsed="0.000691">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t29" name="Click on the Action dropdown value and verify the dropdown values displayed, Add and Remove should be displayed" line="436">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.195388" elapsed="0.001767">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t30" name="Click on the Add Credential link and verify the modal behavior, New row for credential name and Action should be displayed" line="448">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.198190" elapsed="0.000827">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t31" name="Verify if user is able to remove a credential on edit" line="463">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.199846" elapsed="0.000401">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t32" name="Verify when no credential is added or removed on bulk edit,Jobs must retain their existing credentials" line="496">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.200792" elapsed="0.000724">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t33" name="Verify if user is able to add and remove multiple credential on edit" line="522">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-09-05T16:24:21.202281" elapsed="0.000758">Test execution stopped due to a fatal error.</status>
+</test>
+<doc>Definity</doc>
+<status status="FAIL" start="2025-09-05T16:22:28.662018" elapsed="112.542264"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="33" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat info="combined" combined="NOT robot:exit" pass="0" fail="3" skip="0">NOT robot:exit</stat>
+</tag>
+<suite>
+<stat name="Bulk Edit Tests" id="s1" pass="0" fail="33" skip="0">Bulk Edit Tests</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-09-05T16:22:29.277830" level="ERROR">Error in file 'C:\Users\costrategix\PycharmProjects\DEFINITY_REGRESSION\Resources\variables.robot' on line 7: Importing library 'Random' failed: ModuleNotFoundError: No module named 'Random'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\costrategix\PycharmProjects\DEFINITY_REGRESSION\.venv\Scripts\robot.exe
+  C:\Users\costrategix\PycharmProjects\DEFINITY_REGRESSION\.venv\Scripts\python313.zip
+  C:\Users\costrategix\Python\DLLs
+  C:\Users\costrategix\Python\Lib
+  C:\Users\costrategix\Python
+  C:\Users\costrategix\PycharmProjects\DEFINITY_REGRESSION\.venv
+  C:\Users\costrategix\PycharmProjects\DEFINITY_REGRESSION\.venv\Lib\site-packages</msg>
+<msg time="2025-09-05T16:22:29.297108" level="ERROR">Error in file 'C:\Users\costrategix\PycharmProjects\DEFINITY_REGRESSION\POM\BULK_EDIT.robot' on line 12: Importing library 'Random' failed: ModuleNotFoundError: No module named 'Random'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\costrategix\PycharmProjects\DEFINITY_REGRESSION\.venv\Scripts\robot.exe
+  C:\Users\costrategix\PycharmProjects\DEFINITY_REGRESSION\.venv\Scripts\python313.zip
+  C:\Users\costrategix\Python\DLLs
+  C:\Users\costrategix\Python\Lib
+  C:\Users\costrategix\Python
+  C:\Users\costrategix\PycharmProjects\DEFINITY_REGRESSION\.venv
+  C:\Users\costrategix\PycharmProjects\DEFINITY_REGRESSION\.venv\Lib\site-packages</msg>
+<msg time="2025-09-05T16:24:08.914986" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000186ADABFED0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/f08c2755b502421b10d586de0f0f59cc</msg>
+<msg time="2025-09-05T16:24:12.999415" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000186ADAAE780&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/f08c2755b502421b10d586de0f0f59cc</msg>
+<msg time="2025-09-05T16:24:17.063514" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000186ADAAEFD0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/f08c2755b502421b10d586de0f0f59cc</msg>
+</errors>
+</robot>
