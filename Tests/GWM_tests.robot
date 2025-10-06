@@ -7,6 +7,7 @@ Test Teardown     close browser session
 Resource        ../Resources/resource.robot
 Resource        ../POM/GWM_FloatPool.robot
 Resource        ../POM/GWM_Schedules.robot
+Resource        ../POM/GWM_Dashboard.robot
 
 Library         String
 Library         DateTime
@@ -129,6 +130,17 @@ Validate ability to create open shifts from dashboard
     select date from calender
     click on add shift button
 
+Verify that GWM user can edit an open PUBLIC shift
+    navigate to gwm page
+    navigate to Schedules Page from welcome page
+    go to manage open shifts on schedules page
+    open shift date dropdown and select next 30days
+    open visibility filter and filter open public shifts
+    select first shift from the list
+    open shift edit dropdown and edit private shift
+    edit number of opening edit shift window
+    click on save on edit shift window
+
 Validate ability to create open shifts from schedule view
     navigate to gwm page
     navigate to Schedules Page from welcome page
@@ -194,3 +206,102 @@ Validate ability to create schedule shifts by double-tap on calender
     go to next page on calender on add shift window
     select date from calender
     click on add shift button on schedule details page
+
+#GWM Dashboard test cases
+Verify that on clicking on "local contracts ending 30 days" , it directs user to float pool with quick filter "contract ends in 30 days " enabled
+    navigate to gwm page
+    navigate to Dashboard Page from welcome page
+    click on Local Contracts Ending in 30 days hyperlink on gwm dashboard
+    Validate by clicking on Local Contracts Ending in 30 days hyperlink on gwm dashboard it directs user to float pool with quick filter "contract ends in 30 days " enabled
+
+
+Verify that on clicking on "shifts need confirmation " , it directs user to schedule's manage open shift page with quick fiter "need confirmation" enabled
+    navigate to gwm page
+    navigate to Dashboard Page from welcome page
+    click on Shifts Need Confirmation hyperlink on gwm dashboard
+    Validate by clicking on Shifts Need Confirmation hyperlink on gwm dashboard it directs user to schedule's manage open shift page with quick fiter "need confirmation" enabled
+
+
+Verify that a shift can be closed from open shift calendar list
+    navigate to gwm page
+    navigate to Dashboard Page from welcome page
+    click on close shift option in open shifts table and click on continue
+
+Verify that a shift can be offered from open shift calendar list
+    navigate to gwm page
+    navigate to Dashboard Page from welcome page
+    click on offer shift option in open shifts table
+    select talent to offer shift and offer shift
+
+
+Verify that GWM user can add an open PRIVATE shift
+    navigate to gwm page
+    navigate to Dashboard Page from welcome page
+    click on add shift option on gwm dashboard page
+    enable private toggle on create shift window
+    open location/dept dropdown on add shift window
+    select location/dept from dropdown on add shift window
+    open skills dropdown on add shift window
+    select skills from dropdown on add shift window
+    open work type dropdown on add shift window
+    select work type from dropdown on add shift window
+    open shift dropdown on add shift window
+    select shift from dropdown on add shift window
+    select date from calender
+    click on add shift button
+
+Verify that GWM user can edit an open PRIVATE shift
+    navigate to gwm page
+    navigate to Schedules Page from welcome page
+    go to manage open shifts on schedules page
+    open shift date dropdown and select next 30days
+    open visibility filter and filter private shifts
+    select first shift from the list
+    open shift edit dropdown and edit private shift
+    edit number of opening edit shift window
+    click on save on edit shift window
+
+Verify that GWM user can edit an open PUBLIC shift & change it to private
+    navigate to gwm page
+    navigate to Schedules Page from welcome page
+    go to manage open shifts on schedules page
+    open shift date dropdown and select next 30days
+    open visibility filter and filter open public shifts
+    select first shift from the list
+    open shift edit dropdown and edit private shift
+    enable private toggle on edit open public shift
+    edit number of opening edit shift window
+    click on save on edit shift window
+
+Verify that GWM user can edit an open PRIVATE shift & change it to PUBLIC
+    navigate to gwm page
+    navigate to Schedules Page from welcome page
+    go to manage open shifts on schedules page
+    open shift date dropdown and select next 30days
+    open visibility filter and filter private shifts
+    select first shift from the list
+    open shift edit dropdown and edit private shift
+    disable private toggle on edit open private shift
+    edit number of opening edit shift window
+    click on save on edit shift window
+
+Verify that GWM user can close an open PRIVATE shift
+    navigate to gwm page
+    navigate to Schedules Page from welcome page
+    go to manage open shifts on schedules page
+    open shift date dropdown and select next 30days
+    open visibility filter and filter private shifts
+    select first shift from the list
+    open shift edit dropdown and click on cancel shift
+    click on continue for edit open shift
+
+Verify that GWM user can close an open PUBLIC shift
+    navigate to gwm page
+    navigate to Schedules Page from welcome page
+    go to manage open shifts on schedules page
+    open shift date dropdown and select next 30days
+    Open Visibility Filter And Filter Open Public Shifts
+    select first shift from the list
+    open shift edit dropdown and click on cancel shift
+    click on continue for edit open shift
+

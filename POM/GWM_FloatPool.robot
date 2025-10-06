@@ -84,13 +84,13 @@ search for talent details in submittals placements tab on core talents page
    
 open talent details on core talents page
     Wait Until Page Ready
-    Wait Until Element Is Visible    (//tr[@class='k-table-row k-master-row']//a)[1]
+    Wait Until Element Is Visible    (//tr[@class='k-table-row k-master-row']//a)[1]    ${TIMEOUT}
     Click Element                    (//tr[@class='k-table-row k-master-row']//a)[1]
     Wait Until Page Ready
 
 validate talent status should be on assignment or early end
     Wait Until Page Ready
-    Wait Until Element Is Visible    //div[@class='d-flex align-items-center flex-wrap mb-2 me-2']//span
+    Wait Until Element Is Visible    //div[@class='d-flex align-items-center flex-wrap mb-2 me-2']//span    ${TIMEOUT}
     ${talent_status}=    Get Text    //div[@class='d-flex align-items-center flex-wrap mb-2 me-2']//span
     Log    Talent status found: ${talent_status}
     ${status_lower}=    Convert To Lowercase    ${talent_status}
@@ -98,7 +98,7 @@ validate talent status should be on assignment or early end
 
 Validate End Date Is Today Or Future
     Wait Until Page Ready
-    Wait Until Element Is Visible    xpath=//span[contains(@class,'viewpage-info-text')]
+    Wait Until Element Is Visible    xpath=//span[contains(@class,'viewpage-info-text')]    ${TIMEOUT}
     ${full}=    Get Text    xpath=//span[contains(@class,'viewpage-info-text')]
     @{parts}=   Split String    ${full}    -
     ${second}=  Strip String    ${parts}[1]
@@ -122,7 +122,7 @@ click on float department filter
 
 select one location from float locations dropdown and store name in variable
     Wait Until Page Ready
-    Wait Until Element Is Visible           (//li[@class='k-list-item'])[1]
+    Wait Until Element Is Visible           (//li[@class='k-list-item'])[1]    ${TIMEOUT}
     ${floatpool_location}=    Get Text      (//li[@class='k-list-item'])[1] 
     Set Global Variable      ${floatpool_location}    ${floatpool_location}
     Log                                     ${floatpool_location}
@@ -130,7 +130,7 @@ select one location from float locations dropdown and store name in variable
 
 click on apply button
     Wait Until Page Ready
-    Wait Until Element Is Visible    //span[text()='Apply']
+    Wait Until Element Is Visible    //span[text()='Apply']    ${TIMEOUT}
     Click Element                    //span[text()='Apply']
     Wait Until Page Ready
 
@@ -169,7 +169,7 @@ Filter Float Location And Validate
         Wait Until Page Ready
 
         # Apply button
-        Wait Until Element Is Visible    //span[text()='Apply']
+        Wait Until Element Is Visible    //span[text()='Apply']    ${TIMEOUT}
         Click Element    //span[text()='Apply']
         Wait Until Page Ready
 
@@ -254,7 +254,7 @@ Filter Float Department And Validate
         Wait Until Page Ready
 
         # Apply button
-        Wait Until Element Is Visible    //span[text()='Apply']
+        Wait Until Element Is Visible    //span[text()='Apply']    ${TIMEOUT}
         Click Element    //span[text()='Apply']
         Wait Until Page Ready
 
@@ -384,13 +384,13 @@ Filter Float Skills And Validate
 #contract ending in 30days quick filter
 click on contract ending in 30days quick filter
     Wait Until Page Ready
-    Wait Until Element Is Visible        //p[text()='Contracts ending in 30 days']
+    Wait Until Element Is Visible        //p[text()='Contracts ending in 30 days']    ${TIMEOUT}
     Wait Until Page Ready
     Click Element                        //p[text()='Contracts ending in 30 days']
     Wait Until Page Ready
 get contact ending in 30days quick filter count 
     Wait Until Page Ready
-    Wait Until Element Is Visible        //p[text()='Contracts ending in 30 days']/../..//h2
+    Wait Until Element Is Visible        //p[text()='Contracts ending in 30 days']/../..//h2    ${TIMEOUT}
     ${contact ending in 30days quick filter count}=    Get Text    //p[text()='Contracts ending in 30 days']/../..//h2
     Set Global Variable        ${contact ending in 30days quick filter count}    ${contact ending in 30days quick filter count}
     Wait Until Page Ready
@@ -399,7 +399,7 @@ get contact ending in 30days quick filter count
 
 validate contact ending in 30days quick filter count
     Wait Until Page Ready
-    Wait Until Element Is Visible        //span[@class='k-pager-info']
+    Wait Until Element Is Visible        //span[@class='k-pager-info']    ${TIMEOUT}
     Wait Until Page Ready
     ${actual contact ending in 30days quick filter count}=    Get Text    //span[@class='k-pager-info']
     Should Contain    ${actual contact ending in 30days quick filter count}    ${contact ending in 30days quick filter count}
@@ -411,14 +411,14 @@ validate contact ending in 30days quick filter count
 #contract ending in 60days quick filter
 click on contract ending in 60days quick filter
     Wait Until Page Ready
-    Wait Until Element Is Visible        //p[text()='Contracts ending in 60 days']
+    Wait Until Element Is Visible        //p[text()='Contracts ending in 60 days']    ${TIMEOUT}
     Wait Until Page Ready
     Click Element                        //p[text()='Contracts ending in 60 days']
     Wait Until Page Ready
 
 get contact ending in 60days quick filter count
     Wait Until Page Ready
-    Wait Until Element Is Visible        //p[text()='Contracts ending in 60 days']/../..//h2
+    Wait Until Element Is Visible        //p[text()='Contracts ending in 60 days']/../..//h2    ${TIMEOUT}
     ${contact ending in 60days quick filter count}=    Get Text    //p[text()='Contracts ending in 60 days']/../..//h2
     Set Global Variable        ${contact ending in 60days quick filter count}    ${contact ending in 60days quick filter count}
     Wait Until Page Ready
@@ -426,7 +426,7 @@ get contact ending in 60days quick filter count
 
 validate contact ending in 60days quick filter count
     Wait Until Page Ready
-    Wait Until Element Is Visible        //span[@class='k-pager-info']
+    Wait Until Element Is Visible        //span[@class='k-pager-info']    ${TIMEOUT}
     Wait Until Page Ready
     ${actual contact ending in 60days quick filter count}=    Get Text    //span[@class='k-pager-info']
     Should Contain    ${actual contact ending in 60days quick filter count}    ${contact ending in 60days quick filter count}
@@ -454,7 +454,7 @@ enter view name
 
 click on save view button
     Wait Until Page Ready
-    Wait Until Element Is Visible    //button[@type='submit']
+    Wait Until Element Is Visible    //button[@type='submit']    ${TIMEOUT}
     Click Element                    //button[@type='submit']
     Sleep                            ${WAIT_TIME}
     Wait Until Page Ready
@@ -462,7 +462,7 @@ click on save view button
 
 validate that view is created successfully
     Wait Until Page Ready
-    Wait Until Element Is Visible        //button[@aria-label='views']
+    Wait Until Element Is Visible        //button[@aria-label='views']    ${TIMEOUT}
     Wait Until Page Ready
     ${text}=    Get Text                 //button[@aria-label='views']
     Wait Until Page Ready
@@ -477,11 +477,11 @@ validate that view is created successfully
 
 go to default view
     Wait Until Page Ready
-    Wait Until Element Is Visible        //button[@aria-label='views']
+    Wait Until Element Is Visible        //button[@aria-label='views']    ${TIMEOUT}
     Click Element                        //button[@aria-label='views']
     Wait Until Page Ready
     Sleep                                ${WAIT_TIME}
-    Wait Until Element Is Visible        //span[@class='k-link k-menu-link']//*[text()='Default']
+    Wait Until Element Is Visible        //span[@class='k-link k-menu-link']//*[text()='Default']    ${TIMEOUT}
     Click Element                        //span[@class='k-link k-menu-link']//*[text()='Default']
     Wait Until Page Ready
 
@@ -489,26 +489,26 @@ go to default view
 #create subscription
 click on create subscription open button
     Wait Until Page Ready
-    Wait Until Element Is Visible      //button[@aria-label='export']
+    Wait Until Element Is Visible      //button[@aria-label='export']    ${TIMEOUT}
     Click Element                      //button[@aria-label='export']
     Wait Until Page Ready
 
 click on create subscription option
     Wait Until Page Ready
-    Wait Until Element Is Visible    //*[text()='Create Subscription']
+    Wait Until Element Is Visible    //*[text()='Create Subscription']    ${TIMEOUT}
     Click Element                    //*[text()='Create Subscription']
     Sleep                            ${WAIT_TIME}
     Wait Until Page Ready
 
 select start date in create subscription form
     Wait Until Page Ready
-    Wait Until Element Is Visible    //input[@name='schedule.startDate']/..//div
+    Wait Until Element Is Visible    //input[@name='schedule.startDate']/..//div    ${TIMEOUT}
     Click Element                    //input[@name='schedule.startDate']/..//div
     Wait Until Page Ready
-    Wait Until Element Is Visible    //button[@aria-label='Next month']
+    Wait Until Element Is Visible    //button[@aria-label='Next month']    ${TIMEOUT}
     Click Element                    //button[@aria-label='Next month']
     Wait Until Page Ready
-    Wait Until Element Is Visible    //button[text()='1']
+    Wait Until Element Is Visible    //button[text()='1']    ${TIMEOUT}
     Sleep                            ${WAIT_TIME}
     Click Element                    //button[text()='1']
     Sleep                            ${WAIT_TIME}
@@ -516,7 +516,7 @@ select start date in create subscription form
 
 select end date in create subscription form
     Wait Until Page Ready
-    Wait Until Element Is Visible    //input[@name='schedule.endDate']/..//div
+    Wait Until Element Is Visible    //input[@name='schedule.endDate']/..//div    ${TIMEOUT}
     Click Element                    //input[@name='schedule.endDate']/..//div
     Wait Until Page Ready
     Click Element                    //button[text()='28']
@@ -538,28 +538,28 @@ enter time in create subscription form
 
 open repeat dropdown and select daily in create subscription form
     Wait Until Page Ready
-    Wait Until Element Is Visible    //input[@aria-controls='schedule.repeatlist']/..//button
+    Wait Until Element Is Visible    //input[@aria-controls='schedule.repeatlist']/..//button    ${TIMEOUT}
     Click Element                    //input[@aria-controls='schedule.repeatlist']/..//button
     Wait Until Page Ready
-    Wait Until Element Is Visible    //li[@id='option-schedule.repeat-0']
+    Wait Until Element Is Visible    //li[@id='option-schedule.repeat-0']    ${TIMEOUT}
     Click Element                    //li[@id='option-schedule.repeat-0']
     Wait Until Page Ready
 
 enter email subject in create subscription form
     Wait Until Page Ready
-    Wait Until Element Is Visible      //input[@name='emailSubject']
+    Wait Until Element Is Visible      //input[@name='emailSubject']    ${TIMEOUT}
     Input Text                         //input[@name='emailSubject']    test
     Wait Until Page Ready
 
 enter email content in create subscription form
     Wait Until Page Ready
-    Wait Until Element Is Visible     //textarea[@name='emailContent']
+    Wait Until Element Is Visible     //textarea[@name='emailContent']    ${TIMEOUT}
     Input Text                        //textarea[@name='emailContent']    test subscription
     Wait Until Page Ready
 
 click on schedule in create subscription form
     Wait Until Page Ready
-    Wait Until Element Is Visible    //*[text()='Schedule']
+    Wait Until Element Is Visible    //*[text()='Schedule']    ${TIMEOUT}
     Click Element                    //*[text()='Schedule']
     Sleep                            ${WAIT_TIME}
     Wait Until Page Ready
@@ -572,7 +572,7 @@ click on export csv option
 
 make search by talent name
     Wait Until Page Ready
-    Wait Until Element Is Visible    //input[contains(@class,'k-input k-i')]
+    Wait Until Element Is Visible    //input[contains(@class,'k-input k-i')]    ${TIMEOUT}
     Wait Until Page Ready
     Input Text               //input[contains(@class,'k-input k-i')]      ${float_pool_talent_name}
     Wait Until Page Ready
@@ -581,7 +581,7 @@ make search by talent name
 
 validate only searched talent is displayed
     Wait Until Page Ready
-    Wait Until Element Is Visible    //a[@class='vm-left-pane-card-link']
+    Wait Until Element Is Visible    //a[@class='vm-left-pane-card-link']    ${TIMEOUT}
     Wait Until Page Ready
     ${searched_talent_name}=    Get Text    //a[@class='vm-left-pane-card-link']
     Wait Until Page Ready
@@ -595,19 +595,19 @@ validate only searched talent is displayed
 open first talent details from talent pool page and store start/end date, location, qualifications in variable
     Wait Until Page Ready
     #start date/ end date
-    Wait Until Element Is Visible    //span[@class='icon-event viewpage-info-icon']/../..//span[@class=' mb-2 viewpage-info-text']
+    Wait Until Element Is Visible    //span[@class='icon-event viewpage-info-icon']/../..//span[@class=' mb-2 viewpage-info-text']    ${TIMEOUT}
     ${floatpool_talent_start_end_date}=     Get Text    //span[@class='icon-event viewpage-info-icon']/../..//span[@class=' mb-2 viewpage-info-text']
     Log                              ${floatpool_talent_start_end_date}
     Set Global Variable              ${floatpool_talent_start_end_date}
     Wait Until Page Ready
     #location
-    Wait Until Element Is Visible    //span[@class='icon-location viewpage-info-icon']/../..//span[@class=' mb-2 viewpage-info-text']
+    Wait Until Element Is Visible    //span[@class='icon-location viewpage-info-icon']/../..//span[@class=' mb-2 viewpage-info-text']    ${TIMEOUT}
     ${floatpool_talent_location}=    Get Text    //span[@class='icon-location viewpage-info-icon']/../..//span[@class=' mb-2 viewpage-info-text']
     Log                               ${floatpool_talent_location}
     Set Global Variable               ${floatpool_talent_location}
     Wait Until Page Ready
     #qualification
-    Wait Until Element Is Visible    //span[@class='icon-suitcase viewpage-info-icon']/../..//span[@class=' mb-2 viewpage-info-text']
+    Wait Until Element Is Visible    //span[@class='icon-suitcase viewpage-info-icon']/../..//span[@class=' mb-2 viewpage-info-text']    ${TIMEOUT}
     ${floatpool_talent_qualification}=        Get Text    //span[@class='icon-suitcase viewpage-info-icon']/../..//span[@class=' mb-2 viewpage-info-text']
     Log                ${floatpool_talent_qualification}
     Set Global Variable               ${floatpool_talent_qualification}    ${floatpool_talent_qualification}
@@ -616,19 +616,19 @@ open first talent details from talent pool page and store start/end date, locati
 open first talent details from hcs talents page and store start/end date, location, qualifications in variable
     Wait Until Page Ready
     #start date/ end date
-    Wait Until Element Is Visible    //span[@class='icon-event viewpage-info-icon']/../..//span[@class=' mb-2 viewpage-info-text']
+    Wait Until Element Is Visible    //span[@class='icon-event viewpage-info-icon']/../..//span[@class=' mb-2 viewpage-info-text']    ${TIMEOUT}
     ${hcs_talent_start_end_date}=     Get Text    //span[@class='icon-event viewpage-info-icon']/../..//span[@class=' mb-2 viewpage-info-text']
     Log                              ${hcs_talent_start_end_date}
     Set Global Variable              ${hcs_talent_start_end_date}    ${hcs_talent_start_end_date}
     Wait Until Page Ready
     #location
-    Wait Until Element Is Visible    //span[@class='icon-location viewpage-info-icon']/../..//span[@class=' mb-2 viewpage-info-text']
+    Wait Until Element Is Visible    //span[@class='icon-location viewpage-info-icon']/../..//span[@class=' mb-2 viewpage-info-text']    ${TIMEOUT}
     ${hcs_talent_location}=    Get Text    //span[@class='icon-location viewpage-info-icon']/../..//span[@class=' mb-2 viewpage-info-text']
     Log                               ${hcs_talent_location}
     Set Global Variable               ${hcs_talent_location}    ${hcs_talent_location}
     Wait Until Page Ready
     #qualification
-    Wait Until Element Is Visible    //span[@class='icon-suitcase viewpage-info-icon']/../..//span[@class=' mb-2 viewpage-info-text']
+    Wait Until Element Is Visible    //span[@class='icon-suitcase viewpage-info-icon']/../..//span[@class=' mb-2 viewpage-info-text']    ${TIMEOUT}
     ${hcs_talent_qualification}=        Get Text    //span[@class='icon-suitcase viewpage-info-icon']/../..//span[@class=' mb-2 viewpage-info-text']
     Log                ${hcs_talent_qualification}
     Set Global Variable               ${hcs_talent_qualification}       ${hcs_talent_qualification}

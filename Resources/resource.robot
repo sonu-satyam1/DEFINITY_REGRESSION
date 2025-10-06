@@ -6,12 +6,12 @@ Library           String
 
 
 *** Variables ***
-${url}                 https://costrategi-security-stage1.internal-definitywfs.com/signin
+${url}                 https://testorg-security-qa1.internal-definitywfs.com/signin
 ${vendor_url}          https://security-qa2.internal-definitywfs.com/signin
 ${vendor_username}     satyamsonu31@gmail.com
 ${vendor_pwd}          Test@123
-${username}            devops@definity.com
-${password}            Password@123!
+${username}            sonu.satyam@costrategix.com
+${password}            Test@123
 ${TIMEOUT}             30s
 ${WAIT_TIME}           5
 ${FILE}                ${CURDIR}${/}resume.jpg
